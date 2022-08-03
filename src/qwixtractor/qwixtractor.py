@@ -6,7 +6,7 @@ pbar = ProgressBar()
 # create progress bar for the loop
 
 # Construct function to make api call for qwi
-def get_qwi(state = '24', key = api_key, the_vars = ['Emp', 'TurnOvrS', 'EarnBeg']):
+def get_qwi(state = '24', key = "your api key", the_vars = ['Emp', 'TurnOvrS', 'EarnBeg']):
     HOST = 'http://api.census.gov/data/timeseries/qwi/sa?'
     get_vars = the_vars
     predicates = {}
