@@ -27,8 +27,12 @@ def get_qwi(state = '24', key = "your api key", the_vars = ['Emp', 'TurnOvrS', '
 
 def create_qwi_df(states = "states", col_names = "col_names", my_key = "your key"):
     appended_data = []
-    for st in pbar(states):
-        df = get_qwi(state = st, key=my_key)
+    if isinstance(states, list):
+        for st in pbar(states):
+            df = get_qwi(state = st, key=my_key)
+            appended_data.append(df)
+    elif isinstance(states, str):
+        df = get_qwi(state = states, key=my_key)
         appended_data.append(df)
     data = pd.concat(appended_data)
     data.columns = col_names
