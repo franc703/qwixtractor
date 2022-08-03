@@ -1,14 +1,6 @@
 import pandas as pd
 import requests
-import os
-from dotenv import load_dotenv
 from progressbar import ProgressBar
-
-load_dotenv()
-# environment variables
-
-api_key = os.getenv('qwi_key')
-# get api_key without revealing it to the public
 
 pbar = ProgressBar()
 # create progress bar for the loop
